@@ -1,45 +1,65 @@
-import { Text, View, StyleSheet } from "react-native";
-import { blue } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
-import { Link } from "expo-router";
-
+import { 
+  Text, 
+  View, 
+  StyleSheet,
+  Image
+} from "react-native";
+import { Link } from 'expo-router';
+import { CustomeCard } from '@/assets/components/Card';
 
 export default function Index() {
   return (
-    <View style={style.container}>
-      <image style={style.tinyLogo}
-      source={{ 
-        url:</View>
-      }}
-      ></image>
-      <Text style={style.Textname}>
-        Rebecca Max
-      </Text>
-      <Text style={style.Textdesc}>Lorem Ipsum</Text>
-      <Link href="/experience">Experience</Link>
-
-    </View >
+    <View>
+      <View style={style.container}>
+        <Image 
+          style={style.tinyLogo} 
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+        <Text style={style.textName}>
+          Vicky Firmansyah
+        </Text>
+        <Text style={[style.subText, style.textWhite]}>
+          Sigma@gmail.com
+        </Text>
+        <Link href="/experience">Experience</Link>
+      </View>
+      <View style={style.border}>
+        <CustomeCard nama="Vicky" />
+        <CustomeCard nama="Jojo" />
+        <CustomeCard nama="Jabar" />
+      </View>
+    </View>
   );
 }
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: "crimson",
+    backgroundColor: "red",
     height: 250,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    alignItems: "center",
+    borderBottomEndRadius: 32,
+    borderBottomStartRadius: 32,
     justifyContent: "center",
-
+    alignItems: "center"
   },
-  Textname: {
-    fontSize: 24,
-    fontWeight: "bold",
+  textName: {
     color: "white",
-
+    fontSize: 24
   },
-
-  Textdesc: {
-    fontSize: 12,
-    color: 'white',
+  subText: {
+    fontSize: 14
   },
-})
+  textWhite: {
+    color: "white"
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50
+  },
+  border: {
+    top: -25,
+    paddingLeft: 20,
+    paddingRight: 25
+  }
+});

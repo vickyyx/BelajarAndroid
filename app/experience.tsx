@@ -1,9 +1,9 @@
-import { View,Text } from "react-native";
+import { View, Text } from "react-native"
 
-export default function experience() {
-    return(
+export default function Experience() {
+    return (
         <View>
-            <text>Ini Halaman Experience</text>
+            <Text>ini halaman Experience</Text>
         </View>
     )
 }
