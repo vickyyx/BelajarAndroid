@@ -1,14 +1,39 @@
 import { 
   Text, 
-  View, 
+  View,
+  FlatList, 
   StyleSheet,
-  Image
+  Image,
+  ScrollView,
 } from "react-native";
 import { Link } from 'expo-router';
 import { CustomeCard } from '@/assets/components/Card';
 
 export default function Index() {
+  const data =[
+    {id:'1', 
+    label:'Personal',
+    description:'this my personal information', 
+    path:'/personal'
+  },
+    {id:'2', 
+    label:'Experience', 
+    description:'This my experience',
+    path:'/experience'
+  },
+    {id:'3',
+     label:'Education',
+     description:'This my education',
+      path:'/education'
+    },
+    {id:'4', 
+    label:'Certificate', 
+    path:'/certificate'
+  },
+   
+  ];
   return (
+    <ScrollView>
     <View>
       <View style={style.container}>
         <Image 
@@ -26,11 +51,19 @@ export default function Index() {
         <Link href="/experience">Experience</Link>
       </View>
       <View style={style.border}>
-        <CustomeCard nama="Vicky" />
-        <CustomeCard nama="Jojo" />
-        <CustomeCard nama="Jabar" />
+        <FlatList 
+        data={data}
+        renderItem={({item}) =>  <CustomeCard 
+                  nama={item.label} 
+                  description={item.description}
+                  path={item.path}
+                />
+              }
+        keyExtractor={item => item.id}
+        />
       </View>
     </View>
+    </ScrollView>
   );
 }
 
