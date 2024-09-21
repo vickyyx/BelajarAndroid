@@ -7,7 +7,7 @@ export default function Personal() {
       {/* Bagian kiri dengan gambar dan background */}
       <View style={styles.leftContainer}>
         <ImageBackground
-          source={require('../assets/images/pp.jpg')} // Path relatif ke gambar lokal
+          source={require('../assets/images/pp.jpg')} 
           style={styles.image}
         />
       </View>
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    width: 300, // Perbesar ukuran gambar
-    height: 400, // Perbesar ukuran gambar
+    width: 300, 
+    height: 400, 
     resizeMode: "contain",
   },
   rightContainer: {
@@ -65,26 +65,26 @@ const styles = StyleSheet.create({
   },
   name: {
     color: "#FFF",
-    fontSize: 32, // Ukuran teks sedikit diperbesar
+    fontSize: 32, 
     fontWeight: "bold",
     marginBottom: 10,
-    textAlign: "center", // Rata tengah
+    textAlign: "center", 
   },
   title: {
     color: "#FFF",
-    fontSize: 18, // Ukuran teks sedikit diperbesar
+    fontSize: 18, 
     marginBottom: 40,
-    textAlign: "center", // Rata tengah
+    textAlign: "center",
   },
   button: {
     borderBottomColor: "#FF5A3C",
     borderBottomWidth: 1,
     marginBottom: 20,
-    alignItems: "center", // Membuat teks rata tengah
+    alignItems: "center", 
   },
   buttonText: {
     color: "#FFF",
     fontSize: 18,
-    textAlign: "center", // Rata tengah
+    textAlign: "center", 
   },
 });
